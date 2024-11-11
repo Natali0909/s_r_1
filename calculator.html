@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор проведення занять</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+    <!-- Меню -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Репетитор з математики</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Головна</a></li>
+                <li class="nav-item"><a class="nav-link" href="calculator.html">Калькулятор проведення занять</a></li>
+                <li class="nav-item"><a class="nav-link" href="conversion.html">Конвертація</a></li>
+                <li class="nav-item"><a class="nav-link" href="survey.html">Опитування</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основний контент -->
+    <div class="container my-5">
+        <div class="row">
+            <!-- Основний калькулятор -->
+            <div class="col-md-8">
+                <h2>Розрахунок вартості занять</h2>
+                <div class="form-group">
+                    <label for="num-months">Кількість місяців:</label>
+                    <input type="number" id="num-months" class="form-control" placeholder="Введіть кількість місяців">
+                </div>
+                <p>Ціна за одне заняття: <strong>150 грн</strong></p>
+
+                <div class="form-check">
+                    <input type="checkbox" id="friend-checkbox" class="form-check-input">
+                    <label class="form-check-label" for="friend-checkbox">З запрошенням товариша (5% знижка)</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="military-checkbox" class="form-check-input">
+                    <label class="form-check-label" for="military-checkbox">Працює в ЗСУ (10% знижка)</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="privilege-checkbox" class="form-check-input">
+                    <label class="form-check-label" for="privilege-checkbox">Пільговик (15% знижка)</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="pair-checkbox" class="form-check-input">
+                    <label class="form-check-label" for="pair-checkbox">Хочу на парне заняття (7% знижка)</label>
+                </div>
+
+                <button onclick="calculateCost()" class="btn btn-primary mt-3">Розрахувати вартість</button>
+                <p id="calc-result" class="mt-3"></p>
+                <p id="timer-message" class="mt-3" style="font-size: 1.2em;"></p>
+            </div>
+
+            <!-- Інформаційний блок з правого боку -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Інформація про знижки</h5>
+                        <p class="card-text">
+                            <strong>З запрошенням товариша:</strong> Ви отримаєте 5% знижки, якщо приведете друга, який також бажає навчатися.<br><br>
+                            <strong>Працює в ЗСУ:</strong> Нашим захисникам пропонуємо 10% знижки на всі заняття.<br><br>
+                            <strong>Пільговик:</strong> Якщо ви маєте пільги, отримайте знижку 15%.<br><br>
+                            <strong>Парне заняття:</strong> Якщо ви обираєте навчання у групі, знижка складе 7%.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+		
+    </div>
+
+    <!-- Футер -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Контакти: Наталя Федун | Телефон: +380XXXXXXXXX</p>
+        <p>
+            <a href="https://www.instagram.com/ваша_сторінка" class="text-white mx-2">Instagram</a> |
+            <a href="https://www.facebook.com/ваша_сторінка" class="text-white mx-2">Facebook</a>
+        </p>
+    </footer>
+
+    <script>
+        function calculateCost() {
+            const numMonths = parseInt(document.getElementById("num-months").value);
+            const pricePerSession = 150;
+            const sessionsPerMonth = 4;
+            let totalSessions = numMonths * sessionsPerMonth;
+            let totalCost = totalSessions * pricePerSession;
+
+            // Застосування знижок
+            if (document.getElementById("friend-checkbox").checked) totalCost *= 0.95; // 5% знижка
+            if (document.getElementById("military-checkbox").checked) totalCost *= 0.90; // 10% знижка
+            if (document.getElementById("privilege-checkbox").checked) totalCost *= 0.85; // 15% знижка
+            if (document.getElementById("pair-checkbox").checked) totalCost *= 0.93; // 7% знижка
+
+            document.getElementById("calc-result").innerHTML = `Загальна вартість: ${totalCost.toFixed(2)} грн на ${totalSessions} занять.`;
+
+            // Таймер до закінчення навчання
+            const endDate = new Date();
+            endDate.setDate(endDate.getDate() + (numMonths * 30)); // Розрахунок кінцевої дати
+            startEndTimer(endDate);
+        }
+
+        // Функція для запуску таймера до закінчення навчання
+        function startEndTimer(endDate) {
+            setInterval(() => {
+                const now = new Date().getTime();
+                const distance = endDate - now;
+
+                if (distance < 0) {
+                    document.getElementById("timer-message").innerHTML = "Ваше навчання завершено.";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                document.getElementById("timer-message").innerHTML = `До закінчення вашого навчання залишилось: ${days}д ${hours}г ${minutes}хв ${seconds}с`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

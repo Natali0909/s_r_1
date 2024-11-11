@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертація одиниць</title>
+    <link rel="stylesheet" href="styles.css">
+	<!-- Додаємо посилання на Bootstrap у <head> секцію -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h2>Конвертація валюти (USD в EUR)</h2>
+    <input type="number" id="usd" placeholder="Сума в USD">
+    <button onclick="convertCurrency()">Конвертувати</button>
+    <p id="conversion-result"></p>
+
+    <script>
+        function convertCurrency() {
+            const usdAmount = parseFloat(document.getElementById("usd").value);
+            const eurRate = 0.85; // приклад, можна додати динамічний курс
+            const eurAmount = (usdAmount * eurRate).toFixed(2);
+            document.getElementById("conversion-result").innerHTML = `Сума в EUR: ${eurAmount}`;
+        }
+    </script>
+</body>
+</html>

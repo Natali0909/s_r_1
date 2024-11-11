@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Таймер зворотного відліку</title>
+    <link rel="stylesheet" href="styles.css">
+	<!-- Додаємо посилання на Bootstrap у <head> секцію -->
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <h2>Таймер зворотного відліку</h2>
+    <input type="datetime-local" id="countdown-date" />
+    <button onclick="startCountdown()">Запустити таймер</button>
+    <p id="timer-display"></p>
+
+    <script>
+        let countdownInterval;
+        
+        function startCountdown() {
+            const countdownDate = new Date(document.getElementById("countdown-date").value).getTime();
+            
+            if (isNaN(countdownDate)) {
+                alert("Виберіть дату та час.");
+                return;
+            }
+            
+            countdownInterval = setInterval(() => {
+                const now = new Date().getTime();
+                const distance = countdownDate - now;
+                
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById("timer-display").innerHTML = "Час вийшов!";
+                    return;
+                }
+
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById("timer-display").innerHTML = `${days}д ${hours}г ${minutes}хв ${seconds}с`;
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

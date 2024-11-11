@@ -1,0 +1,125 @@
+/* Основний стиль сторінки */
+body {
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+/* Стиль акордеону та карток */
+.accordion-button, .card-body {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+.accordion-button:not(.collapsed) {
+    background-color: #495057;
+}
+.card {
+    border-color: #495057;
+}
+
+/* Стиль футера */
+/* Основний стиль для сторінки */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Контейнер з контентом */
+.container {
+    flex: 1;
+}
+
+/* Футер */
+footer {
+    background-color: #212529;
+    color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto; /* Це дозволить футеру бути завжди внизу */
+}
+
+/* Футер посилання */
+footer a {
+    color: #f8f9fa;
+}
+
+
+
+/* Стиль таймера */
+#timer-display {
+    font-size: 1.5em;
+    color: #ffc107;
+}
+
+/* Стиль повідомлення про вихід за межі сторінки */
+#exit-message {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #ffc107;
+    color: #343a40;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+/* Стиль кнопки повернення наверх */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color: #ffc107;
+    color: #343a40;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+/* Стиль для інших елементів */
+nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+}
+
+button {
+    padding: 8px 16px;
+    font-size: 16px;
+}
+
+/* Налаштування контейнера для контенту */
+.container {
+    flex: 1;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Стиль модального вікна */
+.modal-content {
+    background-color: #212529;
+    color: #f8f9fa;
+}
+
+.modal-header, .modal-footer {
+    border-color: #495057;
+}
+
+/* Адаптивна галерея */
+#carouselExampleInterval {
+    max-width: 800px;
+    max-height: 700px;
+    margin: 0 auto;
+}
+#carouselExampleInterval img {
+    max-height: 300px;
+    object-fit: cover;
+}

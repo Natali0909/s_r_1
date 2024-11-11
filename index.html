@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Репетитор з математики - Наталя Федун</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+	    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+<body>
+
+    <!-- Меню -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">Репетитор з математики</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Послуги
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="servicesDropdown">
+                        <li><a class="dropdown-item" href="calculator.html">Калькулятор проведення занять</a></li>
+                        <li><a class="dropdown-item" href="conversion.html">Конвертація</a></li>
+                        <li><a class="dropdown-item" href="survey.html">Опитування</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="index.html">Головна</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Основний контент -->
+    <div class="container my-5">
+        <!-- Ваш контент тут -->
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Важливість математики для дітей</h2>
+                <p>Математика - це не лише предмет у школі, а й фундаментальний навик, який допомагає дітям розвивати логічне мислення, креативність та самостійність. 
+                Заняття з досвідченим репетитором дозволяють швидко та якісно засвоїти необхідні знання, усунути прогалини у розумінні, а також поліпшити успішність в школі. 
+                Моє завдання – допомогти вашій дитині зрозуміти математику та полюбити цей захоплюючий предмет.</p>
+            </div>
+            <div class="col-md-4">
+                <!-- Відео з YouTube -->
+                <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/ваш_відео_URL" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карусель з фото -->
+        <div id="carouselExampleInterval" class="carousel slide my-4" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="images/1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/2.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="images/3.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Попередній</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Наступний</span>
+            </button>
+        </div>
+        <!-- Акордеон з акціями -->
+        <div class="accordion my-4" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                        Знижка 10% для нових клієнтів!
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        При записі на перше заняття отримайте знижку 10%. Акція діє лише до кінця місяця.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                        Подарунок за рекомендацію!
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        Рекомендуйте наші заняття друзям та отримайте безкоштовне заняття за кожного нового учня.
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		        <!-- Карточки випускників -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/graduate1.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Ольга Шевченко</h5>
+                                <p class="card-text">Закінчила навчання з відзнакою у 2022 році. Зараз працює аналітиком у міжнародній компанії.</p>
+                                <p class="card-text"><small class="text-muted">Клас 2022</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/graduate1.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Ольга Шевченко</h5>
+                                <p class="card-text">Закінчила навчання з відзнакою у 2022 році. Зараз працює аналітиком у міжнародній компанії.</p>
+                                <p class="card-text"><small class="text-muted">Клас 2022</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/graduate1.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Ольга Шевченко</h5>
+                                <p class="card-text">Закінчила навчання з відзнакою у 2022 році. Зараз працює аналітиком у міжнародній компанії.</p>
+                                <p class="card-text"><small class="text-muted">Клас 2022</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="images/graduate1.jpg" class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">Ольга Шевченко</h5>
+                                <p class="card-text">Закінчила навчання з відзнакою у 2022 році. Зараз працює аналітиком у міжнародній компанії.</p>
+                                <p class="card-text"><small class="text-muted">Клас 2022</small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards similarly with details of other successful graduates -->
+        </div>
+    </div>
+		
+
+        <!-- Таймер до дедлайну роботи -->
+        <div class="text-center my-4">
+            <h3>Дедлайн завершення роботи:</h3>
+            <p id="timer-display"></p>
+        </div>
+
+        <!-- Повідомлення про вихід за межі сторінки -->
+        <div id="exit-message">Верніть курсор на межі сторінки!</div>
+
+        <!-- Кнопка "Повернутися наверх" -->
+        <div id="back-to-top" onclick="scrollToTop()">↑</div>
+
+
+        <!-- Модальне вікно -->
+        <div class="modal fade" id="consultationModal" tabindex="-1" aria-labelledby="consultationModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="consultationModalLabel">Замовити консультацію</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Ім'я</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Повідомлення</label>
+                                <textarea class="form-control" id="message" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Відправити</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer class="bg-dark text-white text-center py-3">
+        <p>Контакти: Наталя Федун | Телефон: +380XXXXXXXXX</p>
+        <p>
+            <a href="https://www.instagram.com/ваша_сторінка" class="text-white mx-2">Instagram</a> |
+            <a href="https://www.facebook.com/ваша_сторінка" class="text-white mx-2">Facebook</a>
+        </p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Timer for deadline
+        const deadline = new Date("2024-12-14T23:59:59").getTime();
+        const timerDisplay = document.getElementById("timer-display");
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = deadline - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            timerDisplay.innerHTML = `${days} дн. ${hours} год. ${minutes} хв. ${seconds} сек.`;
+
+            if (distance < 0) {
+                timerDisplay.innerHTML = "Дедлайн минув!";
+            }
+        }
+        setInterval(updateTimer, 1000);
+
+        // Show exit message every time mouse leaves the viewport
+        document.addEventListener("mouseleave", (e) => {
+            if (!e.relatedTarget && !e.toElement) {
+                const exitMessage = document.getElementById("exit-message");
+                exitMessage.style.display = "block";
+                setTimeout(() => exitMessage.style.display = "none", 3000); // Hide after 3 seconds
+            }
+        });
+
+        // Scroll to top button
+        const backToTopButton = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+    </script>
+</body>
+</html>
